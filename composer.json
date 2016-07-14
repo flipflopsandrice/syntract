@@ -1,0 +1,44 @@
+{
+  "name": "Thorongil/Syntract",
+  "description": "Sync & extract remote files",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Erik Beijerman",
+      "email": "erik@thorongil.com",
+      "homepage": "http://www.thorongil.com"
+    }
+  ],
+  "require": {
+    "php" : ">=5.5.0",
+    "symfony/yaml": "^3.0",
+    "monolog/monolog": "^1.19",
+    "albertofem/rsync-lib": "dev-master",
+    "donatj/flags": "1.*",
+    "raulfraile/distill": "^0.9"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "phpunit/phpunit" : "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Thorongil\\Syntract\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Thorongil\\Syntract\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "syntract": [
+      "@composer sync",
+      "@composer extract"
+    ],
+    "sync": "php index.php --execute sync",
+    "extract": "php index.php --execute extract",
+    "test": "phpunit",
+    "cs": "./vendor/bin/phpcs src/"
+  }
+}

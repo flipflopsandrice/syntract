@@ -1,0 +1,14 @@
+sync:
+  folders:
+    remote: /remote/origin/folder
+    local: /my/target/destination
+  delete_from_target: false
+  remote_origin: true
+  ssh:
+    host: my.host.name
+    username: 'my-user-name'
+    public_key: '/path/to/pub.key'
+log:
+  name: 'syntract'
+  file: /tmp/syntract.log
+  level: 'INFO'
